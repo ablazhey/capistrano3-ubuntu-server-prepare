@@ -86,7 +86,7 @@ namespace :ubuntu_server_prepare do
             execute sudo_command + "sh -c \"echo 'PermitRootLogin no'  >> /etc/ssh/sshd_config\""
             execute sudo_command + "sh -c \"echo 'UseDNS no'  >> /etc/ssh/sshd_config\""
             execute sudo_command + "sh -c \"echo 'AllowUsers #{user}'  >> /etc/ssh/sshd_config\""
-            execute sudo_command + 'reload ssh'
+            execute sudo_command + 'service ssh restart'
         end
     end
 
