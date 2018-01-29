@@ -162,7 +162,7 @@ namespace :ubuntu_server_prepare do
                 if fetch :pagespeed_install
                     execute "cd ~/sources/nginx/nginx-#{nginx_version} && ./configure --add-module=$HOME/sources/nginx/ngx_pagespeed-release-#{nps_version}-beta --with-http_ssl_module"
                 else
-                    execute "cd ~/sources/nginx/nginx-#{nginx_version} && ./configure --with-http_ssl_module"
+                    execute "cd ~/sources/nginx/nginx-#{nginx_version} && ./configure --with-http_ssl_module --with-cc-opt='-Wno-error'"
                 end
                 execute :make
             end
